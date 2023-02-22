@@ -11,7 +11,7 @@ const Cart = () => {
     return (
         <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mx-32 mt-10'>
             {
-                state?.sort((a, b) => a._id - b._id).map(product => <ProductCard
+                state?.sort((a, b) => a.cartPosition - b.cartPosition).map(product => <ProductCard
                     product={product}
                 ></ProductCard>)
             }
