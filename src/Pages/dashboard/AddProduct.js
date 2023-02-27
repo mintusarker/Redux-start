@@ -1,8 +1,12 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../../redux/actionCreator/ProductAction";
+import addProductData from "../../redux/thunk/product/addProductData";
 
 const AddProduct = () => {
     const { register, reset, handleSubmit } = useForm();
+    const dispatch = useDispatch()
 
     const submit = (data) => {
         const product = {
@@ -19,21 +23,23 @@ const AddProduct = () => {
             ],
             spec: [],
         };
+        console.log(product);
+        dispatch(addProductData(product))
 
-        fetch('http://localhost:5000/product', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(product)
-        })
-            .then(res => res.json())
-            .then(result => {
-                console.log(result);
-                reset()
-                // toast.success('Product added successfully');
-                // navigate('/dashboard/myproduct');
-            })
+        // fetch('http://localhost:5000/product', {
+        //     method: 'POST',
+        //     headers: {
+        //         'content-type': 'application/json'
+        //     },
+        //     body: JSON.stringify(product)
+        // })
+        //     .then(res => res.json())
+        //     .then(result => {
+        //         console.log(result);
+        //         reset()
+        //         toast.success('Product added successfully');
+        //         navigate('/dashboard/myproduct');
+        //     })
     };
 
     return (

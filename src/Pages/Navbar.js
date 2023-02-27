@@ -12,7 +12,7 @@ const Navbar = () => {
 
         <li className='flex bg-white mx-auto h-8 w-full max-w-lg  rounded-full pr-3'>
           <input
-            className='h-8 rounded-full w-full text-sm border-0 focus:ring-0 outline-none'
+            className='h-8 px-2 rounded-full w-full text-sm border-0 focus:ring-0 outline-none'
             type='text'
             name='search'
             id='search'

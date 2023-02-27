@@ -64,7 +64,7 @@ const Home = () => {
                     In Stock
                 </button>
                 <button onClick={() => dispatch(toggleBrand('amd'))} className={`border px-3 py-2 rounded-full font-semibold ${brands.includes('amd') ? activeClass : null}`}>
-                    AMD
+                    Amd
                 </button>
                 <button onClick={() => dispatch(toggleBrand('intel'))} className={`border px-3 py-2 rounded-full font-semibold ${brands.includes('intel') ? activeClass : null}`}>
                     Intel
